@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Descubra se foi aprovado, reprovado ou de recuperacao</h1>
+
+    <input type="number" id="nota">
+
+    <button id="btn">Verificar situaçao</button>
+
+    <h2 id="res"></h2>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", MostrarNota)
+
+        function MostrarNota() {
+            var box1 = document.querySelector("#nota")
+            var n = Number(box1.value)
+            var r = document.querySelector("#res")
+
+            if (n >= 7) {
+                r.innerHTML = "Aprovado"
+            } else if (n >=5) {
+                r.innerHTML = "Recuperaçao"
+            } else {
+                r.innerHTML = "Reprovado"
+            }
+        }
+    </script>
+
+</body>
+</html>

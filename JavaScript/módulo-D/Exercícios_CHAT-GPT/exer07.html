@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Verificaçao do Detran</h1>
+
+    <h2>Digite sua idade: <input type="number"  id="idade"></h2>
+    <h2>Tem carteira? <input type="text" id="temCarteira"></h2>
+
+    <button id="btn">Verificar</button>
+
+    <p id="res"></p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", varificaoDetran)
+
+        function varificaoDetran(){
+            var box1 = document.querySelector("#idade")
+            var box2 = document.querySelector("#temCarteira")
+            var r = document.querySelector("#res")
+            var i = Number(box1.value)
+            var c = String(box2.value)
+
+            if(i >= 18 && c == "sim","tenho" ) {
+                r.innerHTML = "Pode dirigir <strong>soldado</strong> kkkk"
+            } else {
+                r.innerHTML = "Será preso <strong>sem noçao kkkkkk</strong"
+            }
+
+        }
+    </script>
+
+</body>
+</html>

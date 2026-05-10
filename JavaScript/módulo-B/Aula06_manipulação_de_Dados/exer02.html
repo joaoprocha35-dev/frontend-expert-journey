@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manipulaçao_de_Dados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-shadow: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container01 {
+            background-color: rgb(9, 245, 253);
+            height: 400px;
+            width: 600px;
+            border: 4px solid rgb(255, 0, 0);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container01">
+        <h1>Olá mundo!</h1>
+    </div>
+
+    <script>
+        //Converter string para número: usa o String(window.prompt(.........))
+
+        let num1 = parseInt(window.prompt("Digite um valor"))//variável num1 irá receber o valor do prompt que o usúario irá digitar e logo em seguida irá converter de string para número. usamos: Number.parseInt.
+        let num2 = parseInt(window.prompt("Digite o segundo valor"))
+
+        soma = num1 + num2
+        
+      window.alert("A soma dos valores " + num1 + "+" + num2 + " É " +  "R$:" + (soma) )
+
+       
+
+
+       
+    </script>
+</body>
+
+</html>

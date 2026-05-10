@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     input {
+        height: 30px;
+        min-width: 100px;
+        border: 2px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    button {
+        min-height: 52px;
+        min-width: 120px;
+        padding: 10px;
+        background-color: green;
+        color: black;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+    <h1>Temperatura em Fahrenheit</h1>
+    <!-- c = f - 32 /1,8 -->
+     <input type="number" id="f" placeholder="temperatura">
+
+     <button id="btn">Mostrar Temperatura</button>
+
+     <p id="res"></p>
+
+     <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click",mostrarTemperatura)
+
+        function mostrarTemperatura(){
+            var box1 = document.querySelector("#f")
+            var res = document.querySelector("#res")
+            f = Number(box1.value)
+            c = 32
+            somaC = (f-c) / 1.8
+            res.innerHTML = `A temperatura convertida no Brasil é ${somaC.toFixed(2)}`
+        }
+     </script>
+    
+</body>
+</html>

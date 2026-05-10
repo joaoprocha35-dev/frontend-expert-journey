@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tela2.css">
+    <title>Boas vindas!</title>
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <div class="container01">
+                <div class="title">
+                    <h1>Verificador de Idade</h1>
+                </div>
+
+                <div class="conteudo">
+
+                    <label for="ano-nascimento">Ano de nascimento:
+                        <input type="number" id="ano-nascimento" class="nascimento"
+                            placeholder="Ex:2000">
+                    </label>
+
+                    <div class="seletor">
+
+                        <label>Sexo:</label>
+
+                        <input type="radio" id="sexo-masculino" name="sexo" value="Homem">
+                        <label for="sexo-masculino">Masculino</label>
+
+                        <input type="radio" id="sexo-feminino" name="sexo" value="Mulher">
+                        <label for="sexo-feminino">Feminino</label>
+
+                    </div>
+
+                    <div class="image">
+                        <p id="msg" class="msg"></p>
+                        <img src="" alt="" id="img">
+                    </div>
+
+                    <div class="btn">
+                        <button id="btn" class="botao">Verificar</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/tela2.js"></script>
+</body>
+
+</html>

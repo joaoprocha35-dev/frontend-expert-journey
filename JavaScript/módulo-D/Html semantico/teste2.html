@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 30px;
+        color: rgb(255, 255, 255);
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    header {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        border: 2px solid black;
+        background: linear-gradient(rgb(167, 4, 255),rgb(26, 26, 191),rgb(73, 73, 246));
+        background-size: 150% 150%;
+        animation: animacaHeader 2s linear infinite;
+    }
+    @keyframes animacaHeader {
+        0%{
+            background-position:0% 50% ;
+        }
+        50%{
+            background-position: 50% 100% ;
+        }
+        100%{
+            background-position: 50% 0% ;
+        }
+    }
+
+    main {
+        display: flex;
+        height: 80vh;
+        border: 2px solid rgb(93, 206, 106);
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(195deg, #ff0000, #bbff01, #000000, #f10000,blue);
+        background-size: 300% 300%;
+        animation: animacaoMain 6s ease infinite;
+    }
+    @keyframes animacaoMain{
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 50% 100%;
+        }
+        100%{
+            background-position: 50% 0%;
+        }
+    }
+
+
+    .title {
+        background: red;
+        border: 4px solid black;
+        display: flex;
+        text-align: center;
+        padding: 5px;
+        flex-direction: column;
+    }
+
+    .pizza {
+        display: flex;
+        height: 500px;
+        width: 700px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        background: linear-gradient(190deg, rgb(247, 247, 255),rgb(5, 5, 132),rgb(67, 67, 206));
+        background-size: 100% 100%;
+        animation: animacao2 3s ease infinite;
+        padding: 20px;
+        border: 3px solid white;
+    }
+
+    @keyframes animacao2 {
+        0%{
+            background-position: 10% 50%;
+        }
+        50%{
+            background-position: 50% 100%
+        }
+        100%{
+            background-size: 100% 50%
+        }
+    }
+
+
+
+    .fatias{
+        display: flex;
+        flex-direction: row;
+        gap: 30px ;
+    }
+
+    .fatiaA,
+    .fatiaB {
+        flex: 1;
+        /*Divide a altura do pai entre vocês*/
+        border: 2px solid rgb(255, 0, 0);
+        padding: 20px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+    }
+
+    footer {
+        display: flex;
+        height: 10vh;
+        border: 2px solid rgb(38, 0, 255);
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(243, 6, 235),rgb(215, 0, 201),rgb(72, 4, 168));
+        background-size: 200% 200%;
+        animation: animacaoFooter 5s linear infinite;
+    }
+    @keyframes  animacaoFooter {
+        0%{
+            background-position: 0% 50%;
+        }
+        50%{
+            background-position: 100% 50%
+        }
+        100%{
+            background-size: 50% 0%
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Minha Pizza</h1>
+    </header>
+
+    <main>
+        <section class="pizza">
+
+            <div class="title">
+                <h1>Pizza</h1>
+                <p>Escola a pizza</p>
+            </div>
+            <div class="fatias">
+                <div class="fatiaA">Fatia 1</div>
+                <div class="fatiaB">Fatia 2</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Rodapé</p>
+    </footer>
+</body>
+
+</html>

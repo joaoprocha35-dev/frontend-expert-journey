@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+    input {
+        height: 30px;
+        min-width: 100px;
+        border: 2px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    button {
+        height: 52px;
+        width: 120px;
+        padding: 10px;
+        background-color: green;
+        color: black;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+</style>
+</head>
+<body>
+    <label >Valor emprestimo</label>
+    <input type="text" id="emprestimo" >
+    <label >Valor da taxa de juros</label>
+    <input type="text" id="juros" >
+    <label >Quantas Parcelas</label>
+    <input type="text" id="parcelas" >
+
+    <button id="btn">Resultado</button>
+
+    <p id="res"></p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", mostrarResultado)
+
+        function mostrarResultado(){
+            box1 = document.querySelector("#emprestimo")
+            box2 = document.querySelector("#juros")
+            box3 = document.querySelector("#parcelas")
+            var result = document.querySelector("#res")
+            var n1 = Number(box1.value)
+            var n2 = Number(box2.value)
+            var n3 = Number(box3.value)
+
+            // Conta
+            //Trasformando os juros em Decimal.
+            taxa = n2 / 100 //Trasforma em Decimal
+            // Calculando o emprestimo * o valor decimal dos juros vezes o número de parcelas
+            taxaParcelasTotais = n1 * taxa * n3 //calcula os juros
+            //soma do empresmito com os juros.
+            emprestimoJuroesAvista = n1 + taxaParcelasTotais //total com juros
+            //soma do emprestimo mais os valores do juros dividido pelo números de parcelas
+            totalEmprestimoTaxa = (n1 + taxaParcelasTotais) / n3 //valor por parcela
+
+
+
+            result.innerHTML = `Valor do emprestimo ${n1.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}.  e o valor da taxa: ${taxaParcelasTotais.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}.  A vista com juros ${emprestimoJuroesAvista.toLocaleString("pr-BR", {style: "currency", currency: "BRL"})}. Se você quiser pagar esse valor que é avista: ${emprestimoJuroesAvista.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} em ${n3}X, ficara no valor de: ${totalEmprestimoTaxa.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} por mês. E ai, quer mesmo fazer esse emprestimo???`
+        }
+
+    </script>
+
+</body>
+</html>

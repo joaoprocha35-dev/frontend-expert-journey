@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: linear-gradient(180deg, #01011f, #0b0129,#03024b,#100333,#110139,#0c0330);
+    background-size: 500% 500%;
+    animation: animacaoBody 7s ease infinite;
+}
+@keyframes animacaoBody {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container01{
+    min-height: 300px;
+    width: 800px;
+    padding: 50px;
+    border: 3px solid black;
+    color: white;
+    box-shadow: 10px 5px 20px 10px rgba(90, 90, 90, 0.127);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+h1{
+    font-size: 45px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #04001140;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 10px 5px 20px 10px rgba(0, 0, 0, 0.605);
+    margin-bottom: 60px;
+}
+
+label{
+    font-size: 30px;
+}
+
+input[type="number"] {
+    background-color: transparent;
+    color: white;
+    height: 50px;
+    width: 240px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.nascimento::-webkit-outer-spin-button,
+.nascimento::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::placeholder{
+    color: white;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  padding-right: 40px;
+  cursor: pointer;
+  font-size: 30px;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+input[type="radio"] + label:before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #4a148c;
+  border-radius: 50%;
+}
+
+input[type="radio"] + label:after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #7c4dff;
+  opacity: 0;
+  transform: scale(0);
+}
+
+input[type="radio"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+#img{
+    height: 500px;
+    width: 400px;
+    border-radius: 35px;
+    margin-bottom: 50px;
+    display: none;
+    border: 2px solid rgb(0, 68, 255);
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.botao{
+    height: 60px;
+    width: 180px;
+    border-radius: 15px;
+    background: linear-gradient(rgb(19, 41, 13),#027615,#03c914);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.botao:hover{
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00f83a, #0f160f);
+    box-shadow: 0px 5px 10px 1px rgba(1, 119, 18, 0.963);
+}

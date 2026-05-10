@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacao Login</title>
+    <style>
+        * {
+            font-size: 23px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            color: rgb(0, 0, 0);
+            border: 2px solid white;
+            cursor: pointer;
+            background-color: rgb(40, 0, 218);
+            padding: 5px;
+        }
+        input{
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #999797;
+            border-radius: 5px;
+            min-height: 20px;
+            min-width: 400px;
+            
+        }
+
+        button {
+            min-height: 20px;
+            min-width: 50px;
+            padding: 10px;
+            background-color: green;
+            color: rgb(255, 255, 255);
+            border: 3px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .container {
+            min-height: 300px;
+            min-width: 200px;
+            border: 2px solid white;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.432);
+            border-radius: 15px;
+        }
+        h1{
+            color: aliceblue;
+            font-size: 28px;
+        }
+        .r1{
+            color: green;
+        }
+        .r2{
+            color: rgb(81, 255, 0);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Primeiro Projeto</h1>
+        <hr>
+        <h1>Cadastro</h1>
+        <label for="">Digite seu nome de Usúario</label>
+        <input type="text" id="cUser" required>
+        <label for="">Crie uma senha</label>
+        <input type="password" name="" id="csenha" required>
+
+        <button id="btn1">Cadastrar</button>
+
+        <p id="res1" class="r1"></p>
+
+        <hr>
+
+        <h1>Login</h1>
+        <hr>
+        <label for="">Usúario</label>
+        <input type="text" id="User" required>
+        <label for="">Senha</label>
+        <input type="password" name="" id="senha" required>
+
+        <button id="btn2">Cadastrar</button>
+
+        <p id="res2" class="r2"></p>
+    </div>
+
+    <script>
+        //Pegando os botao dos input
+        var b1 = document.querySelector("#btn1")
+        var b2 = document.querySelector("#btn2")
+
+        //Criando as váriaveis de estado
+        var usuariobox = "" //Escopo global
+        var senhabox = 0    //Escopo global
+
+        //Criando os eventos dos botoes
+        b1.addEventListener("click", cadastrar)
+        b2.addEventListener("click", verificarlogin)
+
+        function cadastrar(){
+            var box1 = document.querySelector("#cUser")
+            var box2 = document.querySelector("#csenha")
+            var r1 = document.querySelector("#res1")
+            var cUsuario = String(box1.value)
+            var cSenha = Number(box2.value)
+
+            //Criando a lógica para salvar os valores que forem colocados no cUsuario e cSenha nas variaveis de estado
+
+            if (cUsuario !== "" && cSenha !== 0) {
+                usuariobox = cUsuario // usuariobox Escopo local
+                senhabox = cSenha     // senhabox Escopo local
+                r1.innerHTML = "Cadastro salvo!"
+            } else {
+                r1.innerHTML = "Preencha os campos"
+            }
+        }
+
+        function verificarlogin() {
+            var box3 = document.querySelector("#User")
+            var box4 = document.querySelector("#senha")
+            var r2 = document.querySelector("#res2")
+            var vUser = String(box3.value)
+            var vSenha = Number(box4.value)
+
+            //Lógica para verificar se o que foi armazenado nas váriaveis de estado é igual as do login
+
+                // usuariobox Escopo local
+                // senhabox Escopo local
+            if (vUser === usuariobox && vSenha === senhabox ) {
+                r2.innerHTML = "<strong>Login verificado com sucesso!</strong>"
+            } else {
+                r2.innerHTML = "<strong>Usúario ou Senha incorreto!</strong>"
+            }
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+/* --- ESTILOS GERAIS E FUNDO --- */
+.animacao-body {
+    min-height: 100vh;
+    background: linear-gradient(150deg, #000000, #1a1a1a);
+    background-size: 300% 300%;
+    animation: animacaoFundo 5s ease infinite;
+}
+
+@keyframes animacaoFundo {
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+}
+
+img {
+    object-fit: cover;
+}
+
+/* --- IMAGENS E CARDS --- */
+.img-card {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Estilo Instagram: Perfeitamente redondo */
+.img-circular {
+    width: 200px;
+    height: 200px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.shadow-white {
+    box-shadow: 0 8px 24px rgba(255, 205, 40, 0.15) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadow-white:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(255, 205, 40, 0.45) !important;
+}
+
+/* --- CARROSSEL E MODAL --- */
+.body-carousel {
+    max-width: 800px; 
+}
+
+.img-car {
+    height: 400px;
+    object-fit: cover;
+}
+
+.img-carro {
+    height: 180px; 
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --- ANIMAÇÕES DE TÍTULOS --- */
+.animacao-h1, .animacao-h2, .animacao-h3, .animacao-servicos {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.animacao-h1.aparecer { animation: deslizarEsquerda 1.2s ease-in-out forwards; }
+.animacao-h2.aparecer { animation: deslizarDireita 1.2s ease-in-out forwards; }
+.animacao-h3.aparecer, .animacao-servicos.aparecer { animation: subirLeve 1s ease-in-out forwards; }
+
+@keyframes deslizarEsquerda {
+    from{ transform: translateX(-200px); opacity: 0; }
+    to{ transform: translateX(0); opacity: 1; }
+}
+@keyframes deslizarDireita {
+    from{ transform: translateX(200px); opacity: 0; }
+    to{ transform: translateX(0); opacity: 1; }
+}
+@keyframes subirLeve {
+    from{ transform: translateY(50px); opacity: 0; }
+    to{ transform: translateY(0); opacity: 1; }
+}
+
+/* --- SLIDER INFINITO (FEEDBACK) --- */
+
+.slider-infinito {
+    overflow: hidden;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+}
+
+.track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.track-left {
+    animation: scrollLeft 25s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 25s linear infinite;
+}
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+.card-depoimento {
+    width: 300px;
+    flex-shrink: 0;
+    border-radius: 15px;
+}
+
+/* FOTO DE PERFIL ESTILO INSTAGRAM */
+.img-perfil-cliente {
+    width: 85px;
+    height: 85px;
+    aspect-ratio: 1 / 1; /* Garante que seja um quadrado perfeito */
+    object-fit: cover;
+    border-radius: 50%; /* Deixa redondo */
+    margin: 0 auto 15px;
+    border: 3px solid #ffc107; /* Borda dourada (como o círculo de Stories) */
+    display: block;
+    background-color: #fff;
+}

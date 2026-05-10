@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatando Números</title>
+    <style>
+        body{
+            background-color: rgb(0, 0, 0);
+        }
+        
+        h1{
+            font-size: 30px;
+            color: red;
+        }
+       
+    </style>
+</head>
+<body>
+    <script>
+        window.alert("Formatação de Números")
+        var n1 =  parseFloat(window.prompt("Digite um número: "))
+        var n2 = parseFloat(window.prompt("Digite o segundo valor"))
+        var moneyBrasil = n1.toLocaleString('pt-BR', {style: "currency", currency: "BRL"})
+        var moneyDolar = n1.toLocaleString('pt-BR', {style: "currency", currency: "USD"})
+        document.write(` <h1>Valor em Reais: ${moneyBrasil} </h1> <br><br>`)
+        document.write(` <h1> Valor em Dolar: ${moneyDolar} </h1>`)
+    </script>
+</body>
+</html>

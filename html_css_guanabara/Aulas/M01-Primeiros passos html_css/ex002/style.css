@@ -1,0 +1,36 @@
+body{
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(0, 0, 0), rgba(0, 0, 0, 0.925), rgba(0, 0, 0, 0.877), rgba(0, 0, 0, 0.952));
+
+}
+
+@keyframes animation-gradient{
+
+    to{
+    background-position: 1000%;
+
+}
+
+}
+
+.cor-paragrafo{
+color: rgb(255, 255, 255);
+}
+
+.texto-degrade{
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to left, #8400ff, #795ecc,#4776ece0,#5833c5,#db53dd);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animation-gradient{
+    to {
+        background-position: 200%;
+    }
+}

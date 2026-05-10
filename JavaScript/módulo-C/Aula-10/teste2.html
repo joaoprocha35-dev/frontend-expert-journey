@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 30px;
+            width: 100px;
+            background-color: green;
+            color: white;
+        }
+
+        input {
+            height: 30px;
+            width: 100px;
+            font-size: 20px;
+        }
+
+        body {
+            font-size: 30px;
+        }
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Divisão de Números</h1>
+    <input type="number" id="box1" name="box1">
+    <input type="number" id="box2" name="box2">
+    <button id="botao">Clique</button>
+    <p id="res">Resultado:</p>
+    <hr>
+
+    <h1>Soma de Números</h1>
+
+    <input type="number" name="box3" id="box3">
+    <input type="number" name="box4" id="box4">
+    <button id="botao2">Clique aqui</button>
+    <p id="res2">Resultado:</p>
+    <hr>
+    <script>
+        var botao = document.querySelector("#botao")
+            .addEventListener("click", dividir)
+        function dividir() {
+            var caixa1 = document.querySelector("#box1")
+            var caixa2 = document.querySelector("#box2")
+            var num1 = Number(caixa1.value)
+            var num2 = Number(caixa2.value)
+            var resultado = document.querySelector("#res")
+            var divi = num1 / num2
+            resultado.innerHTML = `A Divisao do número ${num1} dividido por ${num2} é: <strong>${divi}</strong>`
+        };
+        // FUNCAO SOMAR
+        var botao2 = document.querySelector("#botao2").addEventListener("click", somar)
+        function somar(){
+            var caixa3 = document.querySelector("#caixa3")
+            var caixa4 = document.querySelector("#caixa4")
+            var num3 = Number(box3.value)
+            var num4 = Number(box4.value)
+            var resultado2 = document.querySelector("#res2")
+            var soma = num3 + num4
+            resultado2.innerHTML = `A soma entre os números: ${num3} e ${num4} é: <strong> ${soma} </strong>`
+        }
+    </script>
+
+</body>
+
+</html>

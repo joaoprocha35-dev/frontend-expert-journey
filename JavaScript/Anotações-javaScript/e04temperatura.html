@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input {
+        height: 30px;
+        min-width: 100px;
+        border: 2px solid red;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        margin-bottom: 10px;
+
+    }
+
+    p {
+        font-size: 30px;
+    }
+
+    button {
+        height: 52px;
+        width: 120px;
+        padding: 10px;
+        background-color: green;
+        color: black;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <h1>Converter Temperatura</h1>
+<!-- c = f - 32 /1,8 -->
+    <p>Qual é a temperatura aqui?</p>
+    <input type="number" id="temperatura">
+
+    <button id="btn">Converter</button>
+    <p id="res"></p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", temperatura)
+
+        function temperatura(){
+            var caixa1 = document.querySelector("#temperatura")
+            var f = Number(caixa1.value)
+            var c = 32
+            var resultado = document.querySelector("#res")
+            
+            var tConvertida = (f - c) / 1.8
+
+            resultado.innerHTML = ` A temperatura convertida no Brasil estaria: ${tConvertida.toFixed(1)}`
+        }
+    </script>
+</body>
+
+</html>

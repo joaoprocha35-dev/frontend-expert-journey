@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 30px;
+        }
+
+        input {
+            height: 25px;
+            width: 200px;
+            border: 3px solid black;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            background-color: black;
+            color: aliceblue;
+            border-radius: 10px;
+            padding: 5px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Converter de Reias para Dólar</h1>
+    <p>Valor em Dinheiro</p>
+    <input type="number" id="reais" placeholder="Reais">
+    <p>Digite o valor do Dólar atual</p>
+    
+    <input type="number" id="dolar" placeholder="Dólar">
+
+    <button id="btn">Converter</button>
+    <p id="res">resultado</p>
+
+    <!-- Conversao para Reais -->
+    <hr>
+    <h1>Converter de Dólar para Reais</h1>
+    <input type="number" id="dolar2" placeholder="Dólar atual">
+    <p>Converter de U$$: para R$:</p>
+    <input type="number" id="reais2" placeholder="Valor do Dólar">
+
+    <button id="btn2">Converter</button>
+    <p id="res2">Resultado</p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", convertendo)
+
+        function convertendo() {
+            var caixa1 = document.querySelector("#reais")
+            var caixa2 = document.querySelector("#dolar")
+            var n1 = Number(caixa1.value)
+            var n2 = Number(caixa2.value)
+            var result = document.querySelector("#res")
+
+            var converter = n1 / n2
+
+            result.innerHTML = `${n1.toLocaleString("pt-br", { style: "currency", currency: "BRL" })} convertido em Reais é: ${converter.toLocaleString("pt-br", { style: "currency", currency: "USD" })}`
+
+        }
+
+        var botao2 = document.querySelector("#btn2")
+        botao2.addEventListener("click", converterReais)
+
+        function converterReais(){
+            var caixa3 = document.querySelector("#dolar2")
+            var caixa4 = document.querySelector("#reais2")
+            var n3 = Number(caixa3.value)
+            var n4 = Number(caixa4.value)
+
+            var result2 = document.querySelector("#res2")
+            var converter2 = n3 * n4
+            result2.innerHTML = ` Com ${n4.toLocaleString("pt-br", {style: "currency", currency: "USD"})} Você terá ${converter2.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} no Brasil`
+        }
+    </script>
+
+</body>
+
+</html>

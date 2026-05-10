@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animação que faz o degradê deslizar */
+@keyframes mexerFundo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #0d183a, #031639, #08152c, #01203a);
+    background-size: 300% 300%;
+    animation: degradeBody 5s ease infinite !important;
+
+}
+@keyframes degradeBody {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container01 {
+    min-height: 800px;
+    width: 910px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(235, 233, 233, 0.385);
+    
+    /* Configuração da Animação */
+    background-size: 400% 400% !important;
+    animation: mexerFundo 15s ease infinite !important;
+    
+    /* Mudei de 'background' para 'all' ou 'background-color' 
+       para evitar conflito com a animação que já mexe no background */
+    transition: all 1.5s ease; 
+}
+
+/* DEGRADÊS ANIMADOS (A primeira cor deve ser igual à última para ser contínuo) */
+.dia { 
+    
+    background: linear-gradient(135deg, #50e2ff92, #f4ffca, #90b9fe, #4facfe) !important; 
+}
+.tarde { 
+    background: linear-gradient(135deg, #f093fb, #f5576c, #f77f3a, #f093fb) !important; 
+}
+.noite { 
+    background: linear-gradient(135deg, #0f2027, #203a43, #020b24, #0f2027) !important; 
+}
+
+/* Título sólido para não vazar o fundo */
+.title {
+    width: 100%;
+    text-align: center;
+    background: #000814; 
+    padding: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.title h1 {
+    color: white;
+    font-size: 40px;
+    letter-spacing: 4px;
+}
+
+.msg {
+    margin-top: 40px;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+img {
+    height: 380px;
+    width: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+    margin-bottom: 50px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Input sem setas */
+.hora::-webkit-outer-spin-button,
+.hora::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.hora {
+    height: 60px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    backdrop-filter: blur(10px);
+    outline: none;
+}
+
+button {
+    height: 60px;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(135deg,rgba(255, 255, 255, 0.2), #05173f);
+    box-shadow: 0px 5px 10px 1px rgba(8, 8, 8, 0.695);
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: rgb(218, 218, 218);
+    margin-top: 20px;
+    font-size: 20px;
+}

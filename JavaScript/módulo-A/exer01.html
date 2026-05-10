@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis e Tipos Primitivos</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-shadow: 0;
+        }
+        body{
+            background-color: black;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            color: rgb(0, 204, 255);
+
+        }
+
+        #container01{
+            background-color: blueviolet;
+            border: 3px solid white;
+            border-radius: 10px ;
+            height: 500px;
+            width: 600px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container01">
+
+    </div>
+
+    <script>
+
+        // Anotações:
+        //  typeof: saber o tipo de dado.
+        // alert: printar algo na tela
+        // prompt: Perguntar algo pro usúario
+        // confirm: fazer confirmações
+        
+
+        window.alert("Seja bem-vindo ao Modulo B do seu curso em video!") 
+
+        window.prompt("O que gostaria de aprender hoje? ")
+
+        window.confirm("Certeza que quer continuar? ")
+
+        var num1 = window.prompt("Escolha um número ")
+        var num2 =  window.prompt("Escolha o segundo número ")
+        var soma =  num1 + num2
+
+        window.alert("A soma dos numeros é: ", soma)
+    </script>
+</body>
+</html>

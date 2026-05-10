@@ -1,0 +1,38 @@
+/* =========================
+   ESTILIZAÇÃO DAS IMAGENS
+========================= */
+
+img {
+    width: 100%;
+    max-width: 400px;
+    max-height: 350px;
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+/* Efeito suave ao passar o mouse */
+img:hover {
+    transform: scale(1.03);
+}
+
+/* Imagem da primeira seção */
+.img-missao {
+    border: 4px solid #ffc107;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagem da galeria */
+.img-galeria {
+    width: 260px;
+    height: 260px;
+
+    border: 5px solid #ffc107;
+    padding: 6px;
+
+    transition: 0.4s ease;
+}
+
+.img-galeria:hover {
+    transform: rotate(2deg) scale(1.05);
+}

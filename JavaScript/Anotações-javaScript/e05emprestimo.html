@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+</style>
+<body>
+    <script>
+        var emprestimo = Number(window.prompt("Qual o valor do emprestimo?"))
+        var juros = Number(window.prompt("Digite o valor de juros?"))
+        var parcelas = Number(window.prompt("Digite quantas parcelas você quer dividir? "))
+
+        var taxa = juros / 100 * 12
+        var valorJuros = emprestimo * taxa
+        var total = emprestimo + valorJuros
+
+        var parcelasTotais = total / parcelas
+
+        var teste = parcelasTotais* parcelas
+
+        window.alert(`Seu emprestimo foi de ${emprestimo.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} com + ${juros}% de juros. Valor total a vista a pagar: ${total.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}. Mas se você quiser parcelar seu emprestimo de ${valorJuros.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} em ${parcelas} parcelas ao  més, ficara no valor de: ${parcelasTotais.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} esse valor da parcela * ${parcelas} é igual a ${teste.toLocaleString("pt-br", {style: "currency", currency: "BRL"})} `)
+    </script>
+</body>
+</html>

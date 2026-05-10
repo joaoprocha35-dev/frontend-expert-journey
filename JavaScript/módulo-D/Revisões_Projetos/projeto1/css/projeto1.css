@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: #e2e8f0;
+    overflow: hidden;
+    background: #020617;
+}
+
+/* ================= FUNDO FLUTUANTE ================= */
+body::before{
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+
+    background: radial-gradient(circle at 30% 30%, #0ea5e9 0%, transparent 40%),
+                radial-gradient(circle at 70% 70%, #22c55e 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, #1e3a8a 0%, transparent 50%);
+
+    filter: blur(120px);
+    opacity: 0.5;
+
+    animation: moveBg 25s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0%,0%) rotate(0deg); }
+    50% { transform: translate(-10%,10%) rotate(180deg); }
+    100% { transform: translate(0%,0%) rotate(360deg); }
+}
+
+/* ================= HEADER ================= */
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(270deg, #020617, #0f172a, #020617);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.title h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ================= MAIN ================= */
+main{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= CARD ================= */
+.container01{
+    min-height: 260px;
+    width: 500px;
+    padding: 25px;
+
+    border-radius: 20px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    animation: fadeUp 0.8s ease;
+}
+
+/* ================= TEXTO ================= */
+.hora2{
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ================= IMAGEM ================= */
+.imagem{
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+
+    display: none;
+    transition: 0.4s;
+}
+
+.imagem:hover{
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* ================= INPUT ================= */
+.hora1{
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
+    color: #e2e8f0;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.hora1:focus{
+    border-color: #22c55e;
+    box-shadow: 0 0 10px rgba(34,197,94,0.5);
+}
+
+/* remover setas input number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ================= BOTÃO ================= */
+.btn{
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(135deg, #22c55e, #4ade80);
+    color: #020617;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 0 20px rgba(34,197,94,0.4);
+}
+
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 35px rgba(34,197,94,0.8);
+}
+
+.btn:active{
+    transform: scale(0.95);
+}
+
+/* ================= FOOTER ================= */
+footer{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(270deg, #020617, #0f172a, #020617);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.rodapé{
+    font-size: 0.85rem;
+}
+
+.cor-rodape{
+    color: #38bdf8;
+}
+
+.degraderodape{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+}
+
+/* ================= ANIMAÇÕES ================= */
+@keyframes gradientMove{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

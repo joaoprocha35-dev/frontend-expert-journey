@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+KR:wght@100..900&family=Roboto+Slab:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/projeto2.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="title">
+            <h1>Identificador de sexo e idade</h1>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="container01">
+            <article class="box1">
+                <p>Informe os dados abaixo</p>
+                <div class="box-input">
+                    <input type="number" name="ano-atual" id="ano-atual" placeholder="Ano atual" required>
+                    <input type="number" name="ano-nascimento" id="ano-nascimento" placeholder="Ano nascimento" required>
+
+                    
+                </div>
+
+                <div class="seletor" id="seletor">
+                    <label>Sexo</label>
+
+                    <input type="radio" name="sexo" id="masculino" value="Homem" checked>
+                    <label for="masculino">Homem</label>
+
+                    <input type="radio" name="sexo" id="feminino" value="Mulher">
+                    <label for="feminino">Mulher</label>
+                </div>
+
+                <p class="result" id="result"></p>
+                <img src="" alt="Foto" class="imagem" id="img">
+
+                <button id="btn" class="botao">Verificar</button>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><span class="title-footer">&copy; Desenvolvedor joão.</span></p>
+
+    </footer>
+
+    <script src="js/projeto2.js"></script>
+</body>
+
+</html>

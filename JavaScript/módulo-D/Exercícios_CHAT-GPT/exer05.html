@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Sistema pra saber se é Bom Dia, Boa Tarde ou Boa Noite</h1>
+    <input type="number" id="horas">
+
+    <button id="btn">Verificar</button>
+
+    <h2 id="res"></h2>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", mostrarHoras)
+
+        function mostrarHoras(){
+            var box1 = document.querySelector("#horas")
+            var h = Number(box1.value)
+            var resultado = document.querySelector("#res")
+
+            if (h < 12) {
+                resultado.innerHTML = "Bom Dia!"
+            } else if (h < 18) {
+                resultado.innerHTML = "Boa Tarde!"
+            } else {
+                resultado.innerHTML = "Boa Noite"
+            }
+        } 
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando caracteres</title>
+</head>
+<style>
+    body {
+        font-size: 30px;
+        color: blue;
+    }
+    
+</style>
+<body>
+    <h1>Olá, mundo!</h1>
+    <script>
+        let nome = window.prompt("Digite seu nome")
+        window.alert("Aperte em OK para ver quantos caracteres tem seu nome.")
+        document.write(`Seu nome ${nome} tem ${nome.length} caracteres. <br/>`)
+        document.write(`Seu nome ${nome} em maiúsculo ${nome.toUpperCase()}. <br/>`)
+        document.write(`Seu nome ${nome} em minúsculo ${nome.toLowerCase()}. <br/>`)
+    </script>
+</body>
+</html>

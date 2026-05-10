@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(4, 1, 57),rgb(18, 2, 14), rgb(24, 24, 42));
+    background-size: 300% 300%;
+    animation:  degradeBody 5s ease infinite;
+}
+
+@keyframes degradeBody {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 50% 0%;
+    }
+}
+header{
+    height: 10vh;
+    background-color: rgb(244, 4, 4);
+}
+.tema{
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: aliceblue;
+    min-width: 200px;
+    font-size: 20px;
+    border: 2px solid rgb(54, 53, 53);
+
+}
+
+main{
+    display: flex;
+    height: 80vh;
+    padding: 5px;
+    background-color: brown;
+    justify-content: center;
+    align-items: center;
+}
+.container01{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 600px;
+    background-color: aliceblue;
+}
+ .teste1{
+    display: flex;
+    padding: 5px;
+    height: 250px;
+    /* flex-wrap: wrap; Embrulha os elementos do box para ficar dentro do teste1 */
+    justify-content: space-between;
+    align-items: stretch;
+    width: 300px;
+    background-color: blue;
+    
+}
+
+
+.boxA{
+    height: 40px;
+    width: 30px;
+    text-align: center;
+    background-color: aliceblue;
+    border: 2px solid black;
+    
+}
+.boxB{
+    height: 70px;
+    width: 30px;
+    text-align: center;
+    background-color: aliceblue;
+    border: 2px solid black;
+    
+}
+.boxC{
+    width: 30px;
+    text-align: center;
+    background-color: aliceblue;
+    border: 2px solid black;
+    
+}
+
+footer{
+    height: 10vh;
+}

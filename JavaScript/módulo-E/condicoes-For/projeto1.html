@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Rocha | Tabuada Premium</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Azeret+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent: #8cffc0;
+            --bg-dark: #07080a;
+            --glass: rgba(255, 255, 255, 0.02);
+            --border: rgba(255, 255, 255, 0.07);
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
+            background-color: var(--bg-dark);
+            background-image:
+                radial-gradient(circle at 50% -20%, rgba(140, 255, 192, 0.15), transparent 45%),
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 56px 56px, 56px 56px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .mono {
+            font-family: "Azeret Mono", monospace;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- HEADER --- */
+        .main-header {
+            width: 100%;
+            max-width: 900px;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .system-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* --- MAIN CONTAINER --- */
+        main {
+            width: 100%;
+            max-width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            background: var(--border);
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        /* --- LADO ESQUERDO: GUIA --- */
+        .guide-side {
+            background: rgba(140, 255, 192, 0.03);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid var(--border);
+        }
+
+        .guide-side h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .guide-side p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .instruction-list {
+            list-style: none;
+        }
+
+        .instruction-list li {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .instruction-list b {
+            color: var(--accent);
+            font-family: 'Azeret Mono', monospace;
+        }
+
+        /* --- LADO DIREITO: CALCULADORA --- */
+        .calc-side {
+            background: var(--bg-dark);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input#numero {
+            flex: 1;
+            height: 55px;
+            padding: 0 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-family: 'Azeret Mono', monospace;
+            font-size: 18px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input#numero:focus {
+            border-color: var(--accent);
+            background: rgba(140, 255, 192, 0.05);
+        }
+
+        /* Remover setinhas do input number */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .btn-calc {
+            height: 55px;
+            padding: 0 25px;
+            border-radius: 12px;
+            border: none;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        .btn-calc:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(140, 255, 192, 0.4);
+        }
+
+        /* --- RESULTADOS --- */
+        #res {
+            display: grid;
+            gap: 8px;
+            max-height: 280px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        #res::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #res::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        .line {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            font-family: 'Azeret Mono', monospace;
+            font-size: 14px;
+            opacity: 0;
+            animation: fadeInLine 0.4s ease forwards;
+        }
+
+        @keyframes fadeInLine {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .btn-voltar {
+            margin-top: 25px;
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-voltar:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: rgba(140, 255, 192, 0.05);
+        }
+
+        /* --- FOOTER --- */
+        .main-footer {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .footer-content:hover {
+            opacity: 1;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-side {
+                display: none;
+            }
+
+            .main-header,
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="logo mono">JOÃO<span>ROCHA</span></div>
+        <div class="system-status">
+            <span class="dot"></span>
+            <span class="mono">Engine v1.0</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="guide-side">
+            <p class="mono" style="color: var(--accent); margin-bottom: 10px;">Documentação</p>
+            <h2>Guia de Uso</h2>
+            <p>Esta aplicação demonstra a eficiência dos laços de repetição em JavaScript para processamento de dados
+                dinâmicos.</p>
+
+            <ul class="instruction-list">
+                <li><b>[01]</b> Insira o valor base desejado no campo numérico.</li>
+                <li><b>[02]</b> O sistema processa instantaneamente o multiplicador de 0 a 10.</li>
+                <li><b>[03]</b> Resultados renderizados com estilização condicional via CSS.</li>
+                <li><b>[04]</b> Utilize a tecla "Enter" para disparar o gatilho de cálculo.</li>
+            </ul>
+        </section>
+
+        <section class="calc-side">
+            <p class="mono" style="color: var(--accent); margin-bottom: 5px;">Logic Engine</p>
+            <h1>Tabuada <span>Pro</span></h1>
+
+            <form class="row" id="formTabuada">
+                <input type="number" id="numero" placeholder="Digite um número" required>
+                <button type="submit" class="btn-calc">Calcular</button>
+            </form>
+
+            <div id="res">
+                <div style="text-align: center; color: rgba(255,255,255,0.2); padding: 40px; font-size: 13px;"
+                    class="mono">
+                    Aguardando entrada de dados...
+                </div>
+            </div>
+
+            <button class="btn-voltar mono" id="btnVoltar">← Voltar ao Portfólio</button>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p class="mono">© <span id="year"></span> | Desenvolvido por João Rocha</p>
+            <div class="stack mono">TECH: JS ES6+ / DOM / CSS GRID</div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.querySelector("#formTabuada");
+        const input = document.querySelector("#numero");
+        const res = document.querySelector("#res");
+
+        // Atualizar o ano do footer automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const num = Number(input.value);
+
+            res.innerHTML = "";
+
+            // Lógica de Laço de Repetição (Estudada com Guanabara)
+            for (let i = 0; i <= 10; i++) {
+                const line = document.createElement("div");
+                line.className = "line";
+
+                // Delay dinâmico para o efeito de cascata
+                line.style.animationDelay = `${i * 0.05}s`;
+
+                line.innerHTML = `
+                    <span>${num} x ${i}</span>
+                    <span style="color: #8cffc0; font-weight: 700;">= ${num * i}</span>
+                `;
+                res.appendChild(line);
+            }
+        });
+
+        document.querySelector("#btnVoltar").addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+
+</html>

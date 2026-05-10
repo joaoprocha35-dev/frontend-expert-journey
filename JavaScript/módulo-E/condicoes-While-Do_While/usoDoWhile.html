@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do While - Exemplos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #0ea5e9;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .output {
+      margin-top: 15px;
+      background: #020617;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      min-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Exemplo 1: Validação</h2>
+  <input type="number" id="numero" placeholder="Digite um número maior que 10">
+  <button onclick="validarNumero()">Validar</button>
+
+  <h2>Exemplo 2: Menu</h2>
+  <button onclick="abrirMenu()">Abrir Menu</button>
+
+  <div class="output" id="saida"></div>
+</div>
+
+<script>
+  // 🔵 EXEMPLO 1 - VALIDAÇÃO COM DO WHILE
+  function validarNumero() {
+    let numero
+
+    do {
+      numero = Number(document.getElementById('numero').value)
+
+      if (numero <= 10 || isNaN(numero)) {
+        alert('Número inválido! Digite um número maior que 10')
+        return // interrompe para o usuário tentar novamente manualmente
+      }
+
+    } while (numero <= 10)
+
+    document.getElementById('saida').innerText = 'Número válido: ' + numero
+  }
+
+
+  // 🟣 EXEMPLO 2 - MENU COM DO WHILE
+  function abrirMenu() {
+    let opcao
+    let resultado = ''
+
+    do {
+      opcao = prompt(
+        'Escolha uma opção:\n' +
+        '1 - Somar\n' +
+        '2 - Subtrair\n' +
+        '3 - Sair'
+      )
+
+      switch (opcao) {
+        case '1':
+          let a = Number(prompt('Digite o primeiro número'))
+          let b = Number(prompt('Digite o segundo número'))
+          resultado += `Soma: ${a + b}\n`
+          break
+
+        case '2':
+          let x = Number(prompt('Digite o primeiro número'))
+          let y = Number(prompt('Digite o segundo número'))
+          resultado += `Subtração: ${x - y}\n`
+          break
+
+        case '3':
+          resultado += 'Saindo do menu...\n'
+          break
+
+        default:
+          alert('Opção inválida!')
+      }
+
+    } while (opcao !== '3')
+
+    document.getElementById('saida').innerText = resultado
+  }
+</script>
+
+</body>
+</html>

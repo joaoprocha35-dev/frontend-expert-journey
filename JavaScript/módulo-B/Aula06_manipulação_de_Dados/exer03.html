@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Dados</title>
+    <style>
+        body{
+            background-color: rgb(255, 0, 0);
+            color: aliceblue;
+            font-size: 30px;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            height: 300px;width: 500px;
+            border: 2px solid red;
+            border-radius: 15px;
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        Olá
+    </div>
+
+    <script>
+        window.alert("Cadastro de curso de programação. aperte em Ok para começar.")
+        window.confirm("Quer se matricular em algum curso? ")
+        var nome = String(window.prompt("Qual é seu nome? "))
+        var idade = parseInt(window.prompt("Quantos anos você tem? "))
+        var curso = String(window.prompt("Qual curso Gostaria de fazer? "))
+        var cpf = String(window.prompt("Digite seu CPF: "))
+        window.alert("Cadastro enviado com sucesso!")
+
+       document.write(`Bem-vindo ${nome} Percebi que você tem ${idade } de idade, e é a idade ideal para começar o seu curso de: ${curso} Obs: Aluno: ${nome} do cpf: ${cpf}`)
+    </script>
+</body>
+</html>

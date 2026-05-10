@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validaçao de Login</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+        h1{
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Validaçao de Login</h1>
+    <label for="">senha</label>
+    <input type="number" id="senhaCadastro" required>
+    <label for="">Nome usúario</label>
+    <input type="text" id="usuarioCadastro" required>
+
+    <button id="btn1">Cadastrar</button>
+
+    <p id="res1"></p>
+    <hr>
+
+    <h1>Login</h1>
+    <label for="">Nome usúario</label>
+    <input type="text" id="usuario" required>
+    <label for="">Senha</label>
+    <input type="number" id="senha" required>
+
+    <button id="btn2">Login</button>
+
+    <p id="res2"></p>
+    <!-- <script>
+        var botao1 = document.querySelector("#btn1")
+        botao1.addEventListener("click", validarCadastro)
+
+
+        function validarCadastro() {
+            // Cadastro
+            var box1 = document.querySelector("#usuarioCadastro")
+            var box2 = document.querySelector("#senhaCadastro")
+            var r = document.querySelector("#res1")
+            var u = String(box1.value)
+            var s = Number(box2.value)
+            //Salvar cadastro
+            if (u !== "" && s !== 0) {
+                r.innerHTML = "Cadastro salvo!"
+            } else {
+                r.innerHTML = "Preencha os campos corretamente!"
+            }
+
+            //funcao dentro de uma funcao
+            var botao2 = document.querySelector("#btn2")
+            botao2.addEventListener("click", validarLogin)
+
+            function validarLogin() {
+                // Login
+                var box3 = document.querySelector("#usuario")
+                var box4 = document.querySelector("#senha")
+                var r2 = document.querySelector("#res2")
+                var u2 = String(box3.value)
+                var s2 = Number(box4.value)
+
+                //Validacao de Login:
+                if (s2 === s && u2 === u) {
+                    r2.innerHTML = "Cadastro e Login Confirmado!"
+                } else {
+                    r2.innerHTML = "Usúario ou Senha incorretos!"
+                }
+            }
+        }
+    </script> -->
+
+    <script>
+        //Pegar os botoes 
+        var b1 = document.querySelector("#btn1")
+        var b2 = document.querySelector("#btn2")
+
+        //Criando uma váriavel de estado
+        var usuarioSalvo = ""
+        var senhaSalva = 0
+         //Adicionando evento nos dois botoes
+        b1.addEventListener("click", salvarCadastro)
+        b2.addEventListener("click", validacaoLogin)
+
+        //Chamar a primeira funcao de salvarCadastro
+        function salvarCadastro(){
+            //Pegando os input
+            var box1 = document.querySelector("#usuarioCadastro")
+            var box2 = document.querySelector("#senhaCadastro")
+            var r = document.querySelector("#res1")
+            var u = String(box1.value)
+            var s = Number(box2.value)
+
+            if ( u !== "" && s !== 0){
+                usuarioSalvo = u
+                senhaSalva = s
+                r.innerHTML = "Cadastro salvo, preencha o login agora lindao." 
+            } else {
+                r.innerHTML = "Preencha o formulario antes de ir para o login cabecao!"
+            }
+        }
+            function validacaoLogin() {
+                var box3 = document.querySelector("#usuario")
+                var box4 = document.querySelector("#senha")
+                var r2 = document.querySelector("#res2")
+                var u2 = String(box3.value)
+                var s2 = Number(box4.value)
+
+                if (u2 === usuarioSalvo && s2 === senhaSalva ) {
+                    r2.innerHTML = "Login correto"
+                } else {
+                    r2.innerHTML = "Senha ou nome de usúario incorreto cabeção!"
+                }
+            }
+    </script>
+
+
+</body>
+
+</html>

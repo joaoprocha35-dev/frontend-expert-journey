@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Descobrir os Dias da semana</h1>
+    <label for="">Semana: </label>
+    <input type="text" id="semana">
+
+    <button id="btn">Verificar</button>
+    <p id="res"></p>
+
+
+    <script>
+        var b = document.querySelector("#btn")
+        b.addEventListener("click", mostrarSemana)
+
+        function mostrarSemana() {
+            var box1 = document.querySelector("#semana")
+            var r = document.querySelector("#res")
+            var d = String(box1.value)
+
+            if (d === "sábado" || d === "domingo" ) {
+                r.innerHTML = "Final de semana, vem churrasco!"
+            } else {
+                r.innerHTML = "Dia útil, vai trabalhar fio!"
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Descubra se você é estrangeiro ou nao</h1>
+
+    <p> Digite em qual cidade nasceu:<input type="text" id="cidadeNatal"></p>
+    <p>Digite sua cidade atual<input type="text" id="cidadeAtual"></p>
+
+    <button id="btn">Verificar</button>
+
+    <p id="res"></p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", mostrarIdade)
+
+        function  mostrarIdade() {
+            var box1 = document.querySelector("#cidadeNatal")
+            var box2 = document.querySelector("#cidadeAtual")
+            var result = document.querySelector("#res")
+            var cidadenatal = String(box1.value)
+            var cidadeatual = String(box2.value)
+
+            if (cidadenatal != cidadeatual){
+                result.innerHTML = `Você é estrangeiro!`
+            } else {
+            result.innerHTML = `Sua cidade onde nasceu é ${cidadenatal}`
+            }
+        }
+    </script>
+</body>
+</html>

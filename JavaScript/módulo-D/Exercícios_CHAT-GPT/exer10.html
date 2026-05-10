@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>verificaçao</h1>
+    <label for="">Idade</label>
+    <input type="number" name="idade" id="idade">
+    <label for="">Tem Autorizaçao? </label>
+    <input type="text" id="autorizacao">
+
+    <button id="btn">Verificar</button>
+
+    <p id="res"></p>
+
+
+    <script>
+        var b = document.querySelector("#btn")
+        b.addEventListener("click", varificar)
+
+        function varificar() {
+            var box1 = document.querySelector("#idade")
+            var box2 = document.querySelector("#autorizacao")
+            var r = document.querySelector("#res")
+            var vIdade = Number(box1.value)
+            var temAutorizacao = String(box2.value)
+
+            if (vIdade >= 18) {
+                r.innerHTML = "Entrada liberada"
+            } else if (vIdade >=16 && temAutorizacao === "sim"|| temAutorizacao === "não"){
+                r.innerHTML = "Entrada com autorização"
+            } else {
+                r.innerHTML = "Entrada proibida!"
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

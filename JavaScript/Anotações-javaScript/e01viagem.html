@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: blue;
+        }
+        p{
+            font-size: 25px;
+        }
+
+        button {
+            height: 40px;
+            width: 120px;
+            background-color: green;
+            color: aliceblue;
+            border: 3px solid white;
+            border-radius: 10px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        input {
+            height: 30px;
+            min-width: 100px;
+            text-align: center;
+            border-radius: 5px;
+            border: 2px solid rgb(255, 255, 255);
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .caixa1{
+            min-height: 50px;
+            min-width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid white;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            min-height: 150px;
+            min-width: 00px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            flex-direction: column;
+            padding: 20px;
+            gap: 10px;
+        }
+        .res{
+            color: aliceblue;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="caixa1">
+        <h1>Situaçao 2:</h1>
+
+        <p>Creuza irá Viajar e precisa comprar em dólares</p>
+
+      
+    </div>
+    <div class="container" id="container1">
+
+        <input type="text" id="nome" class="nome" placeholder="Digite seu nome">
+        <input type="number" class="valor1" id="reais" placeholder="Valor reais">
+        <!-- <input type="number" class="valor2" id="dolar"placeholder="Valor Dólar"> -->
+          <button id="btn1">Clique para converter o valor</button>
+
+        <p id="res" class="res">Resultado</p>
+    </div>
+    
+
+    <script>
+        var botao = document.querySelector("#btn1")
+        var resul = document.querySelector("#res")
+
+        botao.addEventListener("click", resultado)
+
+        function resultado(){
+           
+            var caixa1 = document.querySelector("#nome")
+            var caixa2 = document.querySelector("#reais")
+            // var caixa2 = document.querySelector("#dolar")
+            var nome = String(caixa1.value)
+            var reais = Number(caixa2.value)
+            // var dolar = Number(valor3.value) 
+            var soma = reais / 5.22
+            resul.innerHTML = (`Senhor(a) ${nome} com ${reais} você terá ${soma.toFixed(2)}`)
+            
+            
+
+            
+        }
+    </script>
+</body>
+
+</html>

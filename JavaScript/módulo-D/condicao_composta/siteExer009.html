@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <h1>Descubra se está no limete de velocidade</h1>
+
+    <input type="number" id="velAtual">
+
+    <button id="btn1">Verificar Velocidade</button> 
+
+    <h2 id="res"></h2>
+
+    <script>
+        var botao = document.querySelector("#btn1")
+        botao.addEventListener("click", mostrarVelocidade)
+
+        function  mostrarVelocidade(){
+            var box1 = document.querySelector("#velAtual")
+            var result = document.querySelector("#res")
+            var vel = Number(box1.value)
+            if (vel > 60) {
+                result.innerHTML = `Velócidade ultrapassou, você foi <strong>Multado!</strong>`
+            } else {
+                result.innerHTML = ` Dentro do limite de velócidade, mas fique de olho no limite de velócidade!`
+            }  
+        }
+       
+
+       
+    </script>
+</body>
+</html>

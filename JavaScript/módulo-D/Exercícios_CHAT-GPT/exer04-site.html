@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="" id="senhacorreta">
+    <input type="number" name="" id="senhacliente">
+
+    <button id="btn">Verificar</button>
+    <p id="res"></p>
+
+    <script>
+        var botao = document.querySelector("#btn")
+        botao.addEventListener("click", validacaoSenha)
+
+        function validacaoSenha() {
+            var box1 = document.querySelector("#senhacorreta")
+            var box2 = document.querySelector("#senhacliente")
+            var senha1 = Number(box1.value)
+            var senha2 = Number(box2.value)
+            var result = document.querySelector("#res")
+
+            if (senhacorreta == senhacliente) {
+                result.innerHTML = `<strong>Acesso Permitido</strong>`
+            } else {
+                result.innerHTML = `<strong>Acesso Negado</strong>`
+            }
+            
+        }
+    </script>
+</body>
+</html>

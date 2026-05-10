@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1,h2{
+        color: rgb(255, 0, 38);
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        /*Aonde ira o conteúdo*/
+        flex-direction: column;
+    }
+
+    .container01,
+    .container02,
+    .container03 {
+        background: rgb(0, 0, 0);
+    }
+
+    header {
+        text-align: center;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        display: flex;
+        height: 80vh;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        border: 4px solid rgb(255, 255, 255);
+        gap: 100px;
+        
+    }
+
+    .celulares,
+    .computadores {
+        flex: 1;
+        max-width: 350px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid red;
+        border-radius: 10px;
+        
+    }
+
+    .produto1,
+    .produto2 {
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        gap: 60px;
+        color: white;
+    }
+
+    .produto1,.produto2  {
+        display: flex;
+        padding: 20px;
+        min-height: 20px;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid rgb(230, 0, 255);
+    }
+
+    .container03 {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+</style>
+
+<body>
+    <header class="container01">
+        <h1>Teste semantico</h1>
+    </header>
+
+    <main class="container02">
+        
+        <section class="celulares">
+            <h2>Celulares</h2>
+
+            <div class="produto1">
+                <p>Celular1</p>
+                <p>Celular2</p>
+            </div>
+
+        </section>
+
+        <section class="computadores">
+            <h2>Computadores</h2>
+
+            <div class="produto2">
+                <p>computador1</p>
+                <p>computador2</p>
+            </div>
+        </section>
+
+
+    </main>
+    <footer class="container03">
+        <section class="rodape">
+            <h3>Termino</h3>
+        </section>
+    </footer>
+</body>
+
+</html>

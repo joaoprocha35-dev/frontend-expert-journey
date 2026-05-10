@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            height: 30px;
+            min-width: 100px;
+            border-radius: 50px;
+            border: 2px solid black;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            padding: 5px;
+            font-size: 17px;
+        }
+
+        button {
+            height: 50px;
+            width: 130px;
+            background-color: #51ff00;
+            color: black;
+            border: 3px solid rgb(73, 73, 73);
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .r {
+            font-size: 25px;
+            color: red;
+        }
+
+        hr {
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            height: 300px;
+            width: 400px;
+            background-color: seashell;
+            box-shadow: 30px 10px 20px rgba(0, 0, 0, 0.705);
+        }
+
+        .caixa2 {
+
+            height: 100px;
+            width: 100px;
+            background-color: rgba(0, 0, 0, 0.637);
+            border: 2px solid black;
+            border-radius: 50%;
+            text-align: center;
+            margin: auto;
+
+            /* height: 100px;
+            width: 100px;
+            background-color: rgb(0, 0, 0);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 20px; */
+        }
+
+        .caixa2:hover {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: 20px;
+        }
+
+        .caixa2:active {
+            background-color: rgb(235, 0, 0);
+            color: black;
+            font-size: 20px;
+        }
+
+        /* Sistema 3 */
+
+        .resultado3{
+            height: 30px;
+            min-width: 100px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid black;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exercicios de Operadores ternario</h1>
+
+    <h2>Converter Real para Dólar</h2>
+
+    <input type="number" id="num1" placeholder="Valor em Reais">
+    <input type="number" id="num2" placeholder="Valor do Dolar atual?">
+
+    <button id="btn1" class="">Converter</button>
+
+    <p id="res1" class="r"></p>
+
+    <hr>
+
+    <h2>Converter Dólar para Real</h2>
+
+    <input type="number" id="num3" placeholder="Valor em Dolar">
+    <input type="number" id="num4" placeholder="Valor do Dolar atual?">
+
+    <button id="btn2">Converter</button>
+
+    <p id="r2" class="r"></p>
+    <hr>
+
+    <h1>Efeitos de mouse quando entra, sai e click</h1>
+
+    <div class="container">
+        <div class="caixa2">
+            <p>Olá</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>Qual Regiao você mora</h1>
+
+    <input type="text" id="regiao" placeholder="Digite sua terra natal">
+    <input type="text" id="local" placeholder="Local onde está">
+
+    <button id="btn3">clique</button>
+
+    <p id="res3">
+
+    </p>
+
+    <hr>
+
+
+    <script>
+        var botao1 = document.querySelector("#btn1")
+        botao1.addEventListener("click", realDolar)
+
+
+        function realDolar() {
+            var box1 = document.querySelector("#num1")
+            var box2 = document.querySelector("#num2")
+            var n1 = Number(box1.value)
+            var n2 = Number(box2.value)
+            var result = document.querySelector("#res1")
+            var soma1 = n1 / n2
+            result.innerHTML = `O valor ${n1.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })} convertido para Dólar é: ${soma1.toLocaleString("pt-BR", { style: "currency", currency: "USD" })}.`
+        }
+
+        var botao2 = document.querySelector("#btn2")
+        botao2.addEventListener("click", dolarReal)
+
+        function dolarReal() {
+            var box3 = document.querySelector("#num3")
+            var box4 = document.querySelector("#num4")
+            var n3 = Number(box3.value)
+            var n4 = Number(box4.value)
+            var result2 = document.querySelector("#r2")
+            var soma2 = Number(n3) * Number(n4)
+            result2.innerHTML = `O valor ${n3.toLocaleString("pt-BR", { style: "currency", currency: "USD" })} convertido para Real é: ${soma2.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}.`
+        }
+
+        var botao3 = document.querySelector("#btn3")
+        botao3.addEventListener("click", mostrarRegiao)
+
+        function mostrarRegiao () {
+            var local1 = document.querySelector("#regiao").value
+            var local2 = document.querySelector("#local").value
+            var result3 = document.querySelector("#res3")
+            
+            result3.innerHTML = `Você mora em:`
+            if (local1 == local2) {
+                result3.innerHTML = `Você está em sua terra natal`
+                result3.innerHTML += `<p>Parabens!</p>`
+            }else {
+                result3.innerHTML = `Você é estrangeiro!`
+            }
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
